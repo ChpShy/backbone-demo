@@ -1088,8 +1088,9 @@
 
       // Normalize root to always include a leading and trailing slash.
       this.root = ('/' + this.root + '/').replace(rootStripper, '/');
-
+      console.log(oldIE);
       if (oldIE && this._wantsHashChange) {
+        console.log(oldIE);
         this.iframe = Backbone.$('<iframe src="javascript:0" tabindex="-1" />').hide().appendTo('body')[0].contentWindow;
         this.navigate(fragment);
       }
