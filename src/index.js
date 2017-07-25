@@ -110,5 +110,5 @@ $(function(){
         // alert("2");
     });
 
-    Backbone.history.start({hashChange: true, pushState : false});
+    Backbone.history.start();
 });
