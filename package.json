@@ -1,0 +1,32 @@
+{
+  "name": "chpe",
+  "version": "1.0.0",
+  "description": "陈朋的backbone学习项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChpShy/backbone-demo.git"
+  },
+  "keywords": [
+    "backbone"
+  ],
+  "author": "chenpeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChpShy/backbone-demo/issues"
+  },
+  "homepage": "https://github.com/ChpShy/backbone-demo#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
