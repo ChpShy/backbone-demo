@@ -6,7 +6,7 @@ define(function () {
         //默认值
         defaults: function () {
             return {
-                id: "0",
+                id: 0,
                 name: "1",
                 cla: "1"
             }

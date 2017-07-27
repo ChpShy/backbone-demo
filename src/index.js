@@ -51,8 +51,12 @@ require(['./js/model/students','./js/model/student'], function (students, studen
             })
         },
 
+        nextId: function () {
+            return stus.nextId();
+        },
+
         toAdd: function (event) {
-            var id = stus.length+1;
+            var id = this.nextId();
             editView.render({title:"新增", id:id});
         },
 
@@ -128,10 +132,11 @@ require(['./js/model/students','./js/model/student'], function (students, studen
             var cla = $(event.delegateTarget).find("input[name='cla']").val();
             //id == stus.length + 1 表示增加，往集合中添加model
             //id == stus.length 表示编辑，修改model
-            if(id == stus.length + 1) {
+            if(id == schoolView1.nextId()) {
                 // stu.save({id: stus.length+1, name: name, cla: cla});
                 //往集合中添加model
-                stus.create({id: stus.length+1, name: name, cla: cla});
+                console.log("增加操作");
+                stus.create({id: id, name: name, cla: cla});
             }else {
                 //修改模型
                 schoolView1.filter(id)[0].save({name: name, cla: cla});
