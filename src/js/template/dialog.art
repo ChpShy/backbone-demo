@@ -1,0 +1,12 @@
+<div class="dialog-wrapper">
+    <div class="header"><%= title%></div>
+    <div class="content">
+        <div>&nbsp;&nbsp;&nbsp;id：<input type="text" name="id" readonly="readonly" value=<%= id%> ></div>
+        <div>姓名：<input type="text" name="name" value=<%= name%>  ></div>
+        <div>班级：<input type="text" name="cla" value=<%= cla%> ></div>
+    </div>
+    <div class="footer">
+        <button class="sure">确 定</button>
+        <button class="close">关 闭</button>
+    </div>
+</div>

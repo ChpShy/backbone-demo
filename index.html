@@ -18,26 +18,94 @@
     <script type="text/javascript" src="./libs/bootstrap/js/bootstrap-table.min.js"></script>
     <script type="text/javascript" src="./libs/bootstrap/js/bootstrap-table-zh-CN.min.js"></script>
     <script type="text/javascript" src="./libs/layer/layer.js"></script>
-    <script type="text/javascript" src="./dist/bundle.js"></script>
+    <script type="text/javascript" src="./bundle.js"></script>
 </head>
 <body>
     <div class="school-wrapper">
         <div class="school-title">
-            <a class="tab" href="#c1">高三一班</a>
-            <a class="tab" href="#c2">高三二班</a>
-            <a class="tab" href="#c10">高三十班</a>
+            <a class="tab" href="#" id="index">主页</a>
+            <a class="tab" href="#c1" id="c1">高三一班</a>
+            <a class="tab" href="#c2" id="c2">高三二班</a>
+            <a class="tab" href="#c10" id="c10">高三十班</a>
         </div>
-        <div class="school-content" id="content">
-            这是content
-        </div>
+        <div class="school-content" id="content"></div>
+
+        <div id="dialog"></div>
     </div>
 
+<script type="text/javascript">
+    $(function () {
+        var href = window.location.href;
+        var param = href.split("#");
+        if(param.length == 1 || param[1]=="") {
+            $("#index").addClass("selected").siblings(".selected").removeClass("selected");
+        }else {
+            $("#"+param[1]).addClass("selected").siblings(".selected").removeClass("selected");
+        }
+    });
+    $("a.tab").click(function () {
+        $(this).addClass("selected").siblings(".selected").removeClass("selected");
+    });
+</script>
+
     <script type="text/template" id="init-template">
-        <span>欢迎来到主页</span>
+        <span>南昌大学是江西省人民政府和教育部共建的国家“211工程”重点建设大学，是国家“中西部高校综合实力提升计划”和“中西部高校基础能力建设工程”入选高校，是江西省高等教育综合改革试点高校。
+学校地处“英雄城”南昌市，拥有前湖、青山湖、东湖、鄱阳湖和抚州5个校区，其中前湖主校区占地面积4500亩，校舍建筑面积130万平方米。
+学校办学始于1921年创办的江西公立医学专门学校和1940年创建的国立中正大学。1993年，江西大学与江西工业大学合并组建南昌大学，开创了全国高等教育体制改革的先河。2005年，南昌大学与江西医学院合并组建新南昌大学，揭开了学校改革发展的崭新一页。党和国家领导人、教育部和江西省委、省政府高度重视学校的建设与发展，习近平、曾庆红、吴官正、刘延东、孟建柱等中央领导先后到学校视察指导工作。2008年10月，习近平同志视察学校时深情寄语“南昌大学前景无限”。2016年2月，习近平总书记再次亲临学校视察，就高校科研创新和人才培养发表重要讲话，并勉励学校走创新发展之路，希望当代大学生珍惜韶华，用青春铺路，让理想延伸。
+学校本部现有教职工4521人（其中专任教师2662人，正副教授1443人），其中“双聘”院士4人，国家“973计划”首席科学家2人，国家“千人计划”入选者4人，国家“万人计划”入选者2人，国家“杰出青年科学基金”获得者4人，“长江学者”特聘教授5人，全国优秀博士学位论文指导教师1人，国家教学名师1人，国家“百千万人才工程”12人，国家“优秀青年科学基金”获得者2人，国务院学位委员会学科评议组成员1人，教育部科学技术委员会学部委员2人，教育部“新（跨）世纪优秀人才支持计划”12人。涌现了国际护理界最高荣誉奖“南丁格尔奖章”获得者邹德凤、全国模范教师石秋杰等一批崇尚师德、爱岗敬业的典型。
+学校本部现有全日制本科学生36936人，各类研究生13621人，国（境）外学生902人。学校积极探索拔尖创新人才培养新模式，成立了“际銮书院”，推行跨学科、跨学院培养人才的改革。2014年，学校荣获国家级教学成果二等奖2项。建校以来，学校共培养了40多万优秀人才，为国家和地方经济社会发展作出了重要贡献。
+学校现设有人文社科学部、理工学部和医学部，拥有12个学科门类的119个本科专业，2个国家重点学科，1个国家重点（培育）学科，8个学术类博士学位授权一级学科，45个学术类硕士学位授权一级学科，1种博士专业学位授权和18种硕士专业学位授权，11个博士后科研流动站。学校设有5所附属医院，共有9个国家临床重点专科。学校化学、临床医学、农业科学（食品科学与工程为主）、工程学4个学科进入美国ESI排名前1%。1篇博士论文入选全国优秀博士学位论文，实现了江西省“全国百篇优博”零的突破。在全国第三轮一级学科整体水平评估中，食品科学与工程学科位列全国同类学科第4名。
+学校是教育部普通高校本科教学工作水平评估优秀高校，具备扎实的办学基础。现有1个国家级教学团队，1门国家级双语教学示范课程，7门在线开放课程，2门国家级精品课程，6门国家级精品资源共享和视频公开课，3个国家级专业综合改革试点项目，9种“十二五”国家级规划教材，9个国家级特色专业，2个国家级虚拟仿真实验教学中心，5个国家实验教学示范中心，2个国家级大学生校外实践教育基地，4个国家级工程实践教育中心，14个国家级卓越人才教育培养计划专业。学校是教育部中国教育和科研计算机网（CERNET）江西主节点单位，是江西唯一一所参与中国下一代互联网示范工程CNGI建设的高校。《南昌大学学报》分文、理、医、工科版，其中文、理科版为中文核心期刊，医、工科版为科技核心期刊。
+学校现有1个国家重点实验室，1个国家工程技术研究中心，1个教育部人文社会科学重点研究基地，2个教育部重点实验室，3个教育部工程研究中心，9个江西省协同创新中心。2015年，学校获批国家自然科学基金项目199项（位列全国申报单位第30名）；国家社会科学基金22项（位列全国高校第36名），其中国家社科基金重大项目2项，国家艺术基金项目1项。
+学校协同创新能力不断增强，取得了一批原创性、标志性、有特色的科研成果。其中，硅衬底高光效GaN基蓝色发光二极管项目摘得2015年度唯一国家技术发明一等奖，这是自国家科学技术奖设立以来，首次由地方高校获得的一等奖，正助推江西打造“南昌光谷”。学校还与政府、企事业单位开展全方位、多层次的合作，促进科技成果转化，推进政产学研用紧密结合。
+学校重视国际化办学，先后与30多个国家（地区）的90余所高校、科研机构建立了稳定的交流与合作关系。在法国普瓦提埃大学和印尼哈山努丁大学建有孔子学院和孔子课堂。学校与加拿大农业与农业食品部合作共建食品科学与技术联合实验室。
+面临新的历史机遇，南昌大学将不断提升“学术立校、人才强校、依法治校”的新境界，奋力开创“强学科、精管理、惠民生、兴实干”的新局面，解放思想，凝聚共识，深化改革，为建设区域特色鲜明的高水平综合性大学而努力奋斗。</span>
     </script>
 
     <script type="text/template" id="one-template">
-        <span>高三一班</span>
+        <div class="wrapper">
+            <div class="title">高三一班学员表</div>
+            <button class="add">新 增</button>
+            <table border="1" cellspacing="0">
+                <thead>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>班级</th>
+                    <th>操作</th>
+                </thead>
+                <tbody>
+                    <%
+                    for(var i=0; i < len; i++) {
+                    var item = list[i].attributes;
+                    %>
+                    <tr>
+                        <td><%= item.id%></td>
+                        <td><%= item.name%></td>
+                        <td><%= item.cla%></td>
+                        <td><span data-type="edit">编辑</span>&nbsp;&nbsp;<span data-type="del">删除</span></td>
+                    </tr>
+                    <% } %>
+                    <!--<tr>
+                        <td>1</td>
+                        <td>王勇</td>
+                        <td>高三一班</td>
+                        <td><span data-type="edit">编辑</span>&nbsp;&nbsp;<span data-type="del">删除</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>吴昊</td>
+                        <td>高三一班</td>
+                        <td><span data-type="edit">编辑</span>&nbsp;&nbsp;<span data-type="del">删除</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>张亮</td>
+                        <td>高三一班</td>
+                        <td><span data-type="edit">编辑</span>&nbsp;&nbsp;<span data-type="del">删除</span></td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
     </script>
 
     <script type="text/template" id="two-template">
@@ -47,5 +115,13 @@
     <script type="text/template" id="ten-template">
         <span>高三十班</span>
     </script>
+
+    <!--<script type="text/template" id="tr-template">
+
+    </script>-->
+
+    <!--<script type="text/template" id="edit-template">
+
+    </script>-->
 </body>
 </html>

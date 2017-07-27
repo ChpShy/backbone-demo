@@ -1,0 +1,6 @@
+<tr>
+    <td><%= id%></td>
+    <td><%= name%></td>
+    <td><%= cla%></td>
+    <td><span data-type="edit">编辑</span>&nbsp;&nbsp;<span data-type="del">删除</span></td>
+</tr>
